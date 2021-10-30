@@ -13,7 +13,7 @@ const Login = ({ setToken }) => {
         password: ""
       }}
       onSubmit={async (values)=> {
-        fetch("http://challenge-react.alkemy.org/", {
+        fetch("https://challenge-react.alkemy.org/", {
         method: "POST",
         headers: {'Content-Type': 'application/json'},
         body: JSON.stringify(values)
