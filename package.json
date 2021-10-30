@@ -1,0 +1,23 @@
+{
+  "name": "superhero-app-amadeodlp",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "dependencies": {
+    "axios": "^0.23.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "heroku": "^7.59.1",
+    "react-router-dom": "^5.3.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "node server/server.js",
+    "build": "cd client && npm install && npm run build"
+  },
+  "author": "",
+  "license": "ISC",
+  "engines": {
+    "node": "14.17.6"
+  }
+}
