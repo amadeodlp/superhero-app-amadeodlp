@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import PropTypes from 'prop-types';
 import {ErrorMessage, Formik, Form, Field} from "formik";
 import Superheroe from "./images/superheroes.png"
+import axios from 'axios';
 
 const Login = ({ setToken }) => {
   const [loginError, setLoginError] = useState("");
@@ -13,13 +14,25 @@ const Login = ({ setToken }) => {
         password: ""
       }}
       onSubmit={async (values)=> {
-        fetch("https://challenge-react.alkemy.org/", {
+        console.log(values)
+        fetch("http://challenge-react.alkemy.org/", {
         method: "POST",
-        headers: {'Content-Type': 'application/json'},
-        body: JSON.stringify(values)
-      }).then(response => response.json())
-  .then(response => setToken(response))     
-  .catch(error => setLoginError("Invalid credentials"))
+        body: JSON.stringify(values),
+        headers: {
+          "Content-Type": "application/json"
+        }
+      }).then(response => {
+        if (!response.ok) {
+          throw Error(response.status)
+      }
+      response.json().then((response) => setToken(response))
+    }).catch((error) => {
+    console.log(error);
+    setLoginError("Credenciales inválidas");
+    setTimeout(()=>{
+      setLoginError("");
+    }, 2500)
+  })
       }}
       validate={(values)=> {
         let errors = {};
@@ -52,7 +65,7 @@ const Login = ({ setToken }) => {
               <div className="error">
                 <ErrorMessage name="email" component={()=> (<div className="error-text">{errors.email}</div>)}/>
               </div>
-              <div className="label">
+              <div className="label-2">
                 <label htmlFor="password">Contraseña</label>
               </div>
               <div className="form-item">
@@ -66,12 +79,13 @@ const Login = ({ setToken }) => {
                 <ErrorMessage name="password" component={()=> (<div className="error-text">{errors.password}</div>)}/>
               </div>
               <div className="submit-button">
-                <button type="submit" className="btn btn-dark mt-3" disabled={isSubmitting}>
+                <button type="submit" className="btn btn-dark mt-3">
                 Enviar
                 </button>
-              </div>
+              
               <div className="login-error">
                 {loginError && <div className="error">{loginError}</div>}
+              </div>
               </div>
         </div>
         <div className="login-img">

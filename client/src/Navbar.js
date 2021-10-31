@@ -1,23 +1,26 @@
 import React from "react";
 import {Link} from "react-router-dom";
 import Superhero from "./images/superheroes.png"
+import Navbar from "react-bootstrap/Navbar";
+import Nav from "react-bootstrap/Nav";
+import Container from "react-bootstrap/Container";
 
-const Navbar = () => {
+const NavigationBar = () => {
     return (
-        <div className="container">
-        <nav className="navbar fixed-top navbar-expand-md">
-            <img src={Superhero} alt="logo-by-Freepik" width="30" height="24"/>
-            <ul className="navbar-nav ms-auto text-center">
-                <li>
-                    <Link className="nav-link active" to="/">Favoritos</Link>
-                </li>
-                <li>
-                    <Link className="nav-link active" to="/Search">Búsqueda</Link>
-                </li>
-            </ul>
-        </nav>
-        </div>
-    )
+    <Navbar bg="dark" variant="dark" expand="lg" fixed="top">
+    <Container>
+    <Navbar.Brand>Crea tu equipo</Navbar.Brand>
+    <img src={Superhero} className="icon"/>
+    <Navbar.Toggle aria-controls="basic-navbar-nav" />
+    <Navbar.Collapse id="basic-navbar-nav">
+      <Nav className="me-auto">
+       <Nav.Link className="link-container"> <Link to="/" className="link-light" >Favoritos</Link></Nav.Link>
+       <Nav.Link className="link-container"> <Link to="/Search" className="link-light" >Búsqueda</Link></Nav.Link>
+      </Nav>
+    </Navbar.Collapse>
+  </Container>
+</Navbar>
+)
 }
 
-export default Navbar;
+export default NavigationBar;

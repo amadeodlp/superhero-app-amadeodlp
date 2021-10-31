@@ -13,7 +13,7 @@ body {
 
 .header {
   margin: auto;
-  padding-top: 60px;
+  margin-top: 70px;
   text-align: center;
 }
 
@@ -21,28 +21,8 @@ body {
   display: inline-block;
 }
 
-.link {
-  margin-top: 15px;
-  display: inline-block;
-  color: black;
-}
-
-.link:first-child {
-  margin-right: 15px;
-}
-
-.link:nth-child(2) {
-  margin-left: 15px;
-}
-
 .hero-searcher {
   margin: 10px;
-}
-
-.navbar {
-  background-color: antiquewhite;
-  padding-left: 10px;
-  padding-right: 10px;
 }
 
 @media screen and (max-width: 402px) {
@@ -51,10 +31,18 @@ body {
   }
 }
 
-.card-img-fluid {
-  max-height: 250px;
-  max-width: 700px;
-  object-fit: contain;
+@media screen and (min-width: 992px) {
+  .link-light {
+    transition: 0.5s;
+  }
+
+  .me-auto {
+    position: absolute;
+  }
+
+  .link-light:hover {
+    font-size: 22px;
+  }
 }
 
 .form {
@@ -65,7 +53,7 @@ body {
 
 .form-item {
   display: inline-block;
-  padding: 10px;
+  padding: 5px;
 }
 
 .input {
@@ -73,17 +61,72 @@ body {
 }
 
 .error {
-  display: inline-block;
+  position: absolute;
 }
 
 .error-text {
   color: red;
 }
 
-.container {
+.login-img {
   display: inline-block;
 }
 
 .login-img img {
   height: 300px;
+}
+
+.label-2 {
+  margin-top: 25px;
+}
+
+.login-error {
+  display: block;
+  color: red;
+  margin-top: 20px;
+  margin-left: 10px;
+}
+
+.api-error {
+  position: absolute;
+  color: red;
+}
+
+.submit-button {
+  margin-top: 15px;
+  display: block;
+  display: flex;
+}
+
+.list-group-item {
+  text-align: left;
+  display: flex;
+}
+
+.map-container {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.map-item {
+  text-align: center;
+}
+
+.img-fluid {
+  max-width: 250px;
+  max-height: 330px;
+}
+
+.link-container {
+  margin-right: 100px;
+  bottom: 10px;
+}
+
+.link-light {
+  text-decoration: none;
+}
+
+.icon {
+  height: 40px;
+  margin-right: 20px;
 }

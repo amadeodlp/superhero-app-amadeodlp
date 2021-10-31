@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import Navbar from "./Navbar";
+import NavigationBar from "./Navbar";
 import Home from "./Home";
 import Search from "./Search";
 import Login from "./Login";
@@ -15,7 +15,7 @@ return <Login setToken={setToken} />
 
  return ( 
         <Router>
-            <Navbar/>
+            <NavigationBar/>
             <Switch>
                 <Route exact path="/">
                     <Home/>
