@@ -1,1 +1,1 @@
-
+App que consume la API de www.superheroapi.com para crear una lista de superhéroes favoritos. El usuario debe loguearse con las credenciales que autoriza una API de muestra. (Usuario: challenge@alkemy.org Pass: react) La API requiere de la extensión ALLOW CORS para funcionar.
