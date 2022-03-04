@@ -15,24 +15,22 @@ const Login = ({ setToken }) => {
       }}
       onSubmit={async (values)=> {
         console.log(values)
-        fetch("http://challenge-react.alkemy.org/", {
-        method: "POST",
-        body: JSON.stringify(values),
-        headers: {
-          "Content-Type": "application/json"
-        }
-      }).then(response => {
-        if (!response.ok) {
-          throw Error(response.status)
-      }
-      response.json().then((response) => setToken(response))
-    }).catch((error) => {
-    console.log(error);
-    setLoginError("Credenciales inválidas");
-    setTimeout(()=>{
-      setLoginError("");
-    }, 2500)
-  })
+        try {
+        const res = await axios.post("/api", {
+          method: "POST",
+          body: JSON.stringify(values),
+          headers: {
+            "Content-Type": "application/json"
+          }
+        })
+        setToken(res.data);      
+        } catch (error) {
+          console.log(error);
+          setLoginError("Credenciales inválidas");
+          setTimeout(()=>{
+            setLoginError("");
+          }, 2500)
+          }
       }}
       validate={(values)=> {
         let errors = {};

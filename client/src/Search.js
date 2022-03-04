@@ -11,8 +11,12 @@ const Search = () => {
   const handleSubmit = () => {
   const hero = textInput.current.value
   setMessage("buscando héroe...")
-  axios.get(`https://superheroapi.com/api/4511754818882123/search/${hero}`, {'header': 'Access-Control-Allow-Origin'})
+  axios.get(`https://superheroapi.com/api/4511754818882123/search/${hero}`, {
+    headers: {
+      'Access-Control-Allow-Origin': '*'
+    }})
   .then((response)=>{
+    response.setHeader('Access-Control-Allow-Origin', '*');
     setMessage("")
     let searchResult = response.data.results
     searchResult ? 
