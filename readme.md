@@ -1,1 +1,6 @@
-App que consume la API de www.superheroapi.com para crear una lista de superhéroes favoritos. El usuario debe loguearse con las credenciales que autoriza una API de muestra. (Usuario: challenge@alkemy.org Pass: react) La API requiere de la extensión ALLOW CORS para funcionar.
+App that consumes www.superheroapi.com API to create a favourite superheroes list. 
+Technologies: React, Express, Bootstrap, Axios, React-Router, Formik.
+App que consume la API de www.superheroapi.com para crear una lista de superhéroes favoritos. 
+Tecnologías: React, Express, Bootstrap, Axios, React-Router, Formik.
+
+https://superhero-app-amadeodlp.herokuapp.com/
