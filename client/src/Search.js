@@ -11,7 +11,7 @@ const Search = () => {
   const handleSubmit = () => {
   const hero = textInput.current.value
   setMessage("buscando héroe...")
-  axios.get(`https://superheroapi.com/api.php/4511754818882123/search/${hero}`)
+  axios.get(`https://superheroapi.com/api.php/${process.env.REACT_APP_API_KEY}/search/${hero}`)
   .then((response)=>{
     setMessage("")
     let searchResult = response.data.results
